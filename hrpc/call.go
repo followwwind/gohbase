@@ -10,10 +10,9 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"unsafe"
-
 	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/pb"
+	"gohbase/pb"
+	"unsafe"
 )
 
 // RegionInfo represents HBase region.
@@ -22,6 +21,7 @@ type RegionInfo interface {
 	AvailabilityChan() <-chan struct{}
 	MarkUnavailable() bool
 	MarkAvailable()
+	MarkErr(err error)
 	MarkDead()
 	Context() context.Context
 	String() string
@@ -33,6 +33,7 @@ type RegionInfo interface {
 	Table() []byte
 	SetClient(RegionClient)
 	Client() RegionClient
+	Err() error
 }
 
 // RegionClient represents HBase region client.

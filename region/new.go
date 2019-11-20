@@ -10,10 +10,9 @@ package region
 import (
 	"context"
 	"fmt"
+	"gohbase/hrpc"
 	"net"
 	"time"
-
-	"github.com/tsuna/gohbase/hrpc"
 )
 
 // NewClient creates a new RegionClient.

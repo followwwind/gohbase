@@ -8,12 +8,11 @@ package hrpc
 import (
 	"context"
 	"errors"
+	"gohbase/filter"
 	"math"
 	"testing"
 	"time"
-
 	"github.com/aristanetworks/goarista/test"
-	"github.com/tsuna/gohbase/filter"
 )
 
 func TestFamilesOption(t *testing.T) {

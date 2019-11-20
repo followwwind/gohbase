@@ -7,9 +7,9 @@ package filter
 
 import (
 	"errors"
+	"gohbase/pb"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/pb"
 )
 
 const comparatorPath = "org.apache.hadoop.hbase.filter."

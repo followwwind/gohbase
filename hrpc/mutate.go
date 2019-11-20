@@ -9,10 +9,9 @@ import (
 	"context"
 	"encoding/binary"
 	"errors"
-	"time"
-
 	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/pb"
+	"gohbase/pb"
+	"time"
 )
 
 var (

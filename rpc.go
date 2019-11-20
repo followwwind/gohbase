@@ -10,15 +10,14 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/golang/protobuf/proto"
+	log "github.com/sirupsen/logrus"
+	"gohbase/hrpc"
+	"gohbase/region"
+	"gohbase/zk"
 	"io"
 	"strconv"
 	"time"
-
-	"github.com/golang/protobuf/proto"
-	log "github.com/sirupsen/logrus"
-	"github.com/tsuna/gohbase/hrpc"
-	"github.com/tsuna/gohbase/region"
-	"github.com/tsuna/gohbase/zk"
 )
 
 // Constants
@@ -45,6 +44,8 @@ var (
 	// errMetaLookupThrottled is returned when a lookup for the rpc's region
 	// has been throttled.
 	errMetaLookupThrottled = errors.New("lookup to hbase:meta has been throttled")
+
+	ZkClientNotConnect = errors.New("failed to read the /hbase/meta-region-server znode: zk: could not connect to a server")
 )
 
 const (
@@ -100,6 +101,9 @@ func (c *client) SendRPC(rpc hrpc.Call) (proto.Message, error) {
 				case <-c.done:
 					return nil, ErrClientClosed
 				case <-ch:
+					if reg.Err() != nil {
+						return nil, reg.Err()
+					}
 				}
 			}
 			if reg.Context().Err() != nil {
@@ -254,12 +258,15 @@ func (c *client) lookupRegion(ctx context.Context,
 			"err":     err,
 		}).Error("failed looking up region")
 
-		// This will be hit if there was an error locating the region
-		backoff, err = sleepAndIncreaseBackoff(ctx, backoff)
-		if err != nil {
-			return nil, "", err
-		}
+
+		return nil, "", err
+		//This will be hit if there was an error locating the region
+		//backoff, err = sleepAndIncreaseBackoff(ctx, backoff)
+		//if err != nil {
+		//	return nil, "", err
+		//}
 	}
+
 }
 
 func (c *client) findRegion(ctx context.Context, table, key []byte) (hrpc.RegionInfo, error) {
@@ -515,11 +522,13 @@ func (c *client) establishRegion(reg hrpc.RegionInfo, addr string) {
 				// client has been closed
 				return
 			} else if err != nil {
-				log.WithFields(log.Fields{
-					"region":  originalReg.String(),
-					"err":     err,
-					"backoff": backoff,
-				}).Fatal("unknown error occured when looking up region")
+				originalReg.MarkErr(err)
+				//log.WithFields(log.Fields{
+				//	"region":  originalReg.String(),
+				//	"err":     err,
+				//	"backoff": backoff,
+				//}).Fatal("unknown error occured when looking up region")
+				return
 			}
 			if !bytes.Equal(reg.Name(), originalReg.Name()) {
 				// put new region and remove overlapping ones.

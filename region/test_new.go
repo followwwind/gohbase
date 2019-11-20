@@ -14,10 +14,9 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
-
+	"gohbase/hrpc"
+	"gohbase/pb"
 	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/hrpc"
-	"github.com/tsuna/gohbase/pb"
 )
 
 type testClient struct {

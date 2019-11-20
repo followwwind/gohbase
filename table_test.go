@@ -10,14 +10,12 @@ package gohbase_test
 import (
 	"context"
 	"fmt"
+	"gohbase/filter"
+	"gohbase/hrpc"
 	"io"
 	"strings"
 	"testing"
 	"time"
-
-	"github.com/tsuna/gohbase"
-	"github.com/tsuna/gohbase/filter"
-	"github.com/tsuna/gohbase/hrpc"
 )
 
 // Name of the meta region.

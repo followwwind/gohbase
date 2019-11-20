@@ -3,9 +3,8 @@ package hrpc
 import (
 	"context"
 	"errors"
-
 	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/pb"
+	"gohbase/pb"
 )
 
 // ListTableNames models a ListTableNames pb call

@@ -9,16 +9,14 @@ package zk
 import (
 	"encoding/binary"
 	"fmt"
+	"github.com/golang/protobuf/proto"
+	"github.com/samuel/go-zookeeper/zk"
+	log "github.com/sirupsen/logrus"
+	"gohbase/pb"
 	"net"
 	"path"
 	"strings"
 	"time"
-
-	log "github.com/sirupsen/logrus"
-
-	"github.com/golang/protobuf/proto"
-	"github.com/samuel/go-zookeeper/zk"
-	"github.com/tsuna/gohbase/pb"
 )
 
 type logger struct{}

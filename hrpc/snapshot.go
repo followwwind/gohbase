@@ -8,9 +8,8 @@ package hrpc
 import (
 	"context"
 	"errors"
-
 	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/pb"
+	"gohbase/pb"
 )
 
 type snap struct {

@@ -9,17 +9,15 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
+	"github.com/golang/protobuf/proto"
+	log "github.com/sirupsen/logrus"
+	"gohbase/hrpc"
+	"gohbase/pb"
 	"io"
 	"net"
 	"sync"
 	"sync/atomic"
 	"time"
-
-	log "github.com/sirupsen/logrus"
-
-	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/hrpc"
-	"github.com/tsuna/gohbase/pb"
 )
 
 // ClientType is a type alias to represent the type of this region client

@@ -7,10 +7,9 @@ package gohbase
 
 import (
 	"bytes"
+	"gohbase/hrpc"
+	"gohbase/region"
 	"testing"
-
-	"github.com/tsuna/gohbase/hrpc"
-	"github.com/tsuna/gohbase/region"
 )
 
 func TestRegionDiscovery(t *testing.T) {

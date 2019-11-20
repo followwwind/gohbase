@@ -7,11 +7,10 @@ package hrpc
 
 import (
 	"errors"
+	"gohbase/filter"
+	"gohbase/pb"
 	"math"
 	"time"
-
-	"github.com/tsuna/gohbase/filter"
-	"github.com/tsuna/gohbase/pb"
 )
 
 // baseQuery bundles common fields that can be provided for quering requests: Scans and Gets

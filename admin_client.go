@@ -9,13 +9,12 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"time"
-
 	log "github.com/sirupsen/logrus"
-	"github.com/tsuna/gohbase/hrpc"
-	"github.com/tsuna/gohbase/pb"
-	"github.com/tsuna/gohbase/region"
-	"github.com/tsuna/gohbase/zk"
+	"gohbase/hrpc"
+	"gohbase/pb"
+	"gohbase/region"
+	"gohbase/zk"
+	"time"
 )
 
 const (

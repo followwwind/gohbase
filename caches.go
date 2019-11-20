@@ -7,12 +7,11 @@ package gohbase
 
 import (
 	"bytes"
-	"io"
-	"sync"
-
 	"github.com/cznic/b"
 	log "github.com/sirupsen/logrus"
-	"github.com/tsuna/gohbase/hrpc"
+	"gohbase/hrpc"
+	"io"
+	"sync"
 )
 
 // clientRegionCache is client -> region cache. Used to quickly

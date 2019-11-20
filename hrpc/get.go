@@ -7,9 +7,8 @@ package hrpc
 
 import (
 	"context"
-
 	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/pb"
+	"gohbase/pb"
 )
 
 // Get represents a Get HBase call.

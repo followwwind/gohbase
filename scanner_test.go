@@ -9,18 +9,17 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"io"
-	"sync"
-	"testing"
-
 	atest "github.com/aristanetworks/goarista/test"
 	"github.com/golang/mock/gomock"
 	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/hrpc"
-	"github.com/tsuna/gohbase/pb"
-	"github.com/tsuna/gohbase/region"
-	"github.com/tsuna/gohbase/test"
-	"github.com/tsuna/gohbase/test/mock"
+	"gohbase/hrpc"
+	"gohbase/pb"
+	"gohbase/region"
+	"gohbase/test"
+	"gohbase/test/mock"
+	"io"
+	"sync"
+	"testing"
 )
 
 func cp(i uint64) *uint64 {

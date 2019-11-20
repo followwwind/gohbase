@@ -9,11 +9,10 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"sync"
-
 	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/hrpc"
-	"github.com/tsuna/gohbase/pb"
+	"gohbase/hrpc"
+	"gohbase/pb"
+	"sync"
 )
 
 var multiPool = sync.Pool{

@@ -6,7 +6,7 @@ package mock
 
 import (
 	gomock "github.com/golang/mock/gomock"
-	zk "github.com/tsuna/gohbase/zk"
+	zk "gohbase/zk"
 	reflect "reflect"
 )
 

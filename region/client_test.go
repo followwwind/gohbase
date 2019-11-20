@@ -11,20 +11,19 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
+	"gohbase/hrpc"
+	"gohbase/pb"
+	"gohbase/test"
+	"gohbase/test/mock"
 	"net"
 	"strconv"
 	"sync"
 	"sync/atomic"
 	"testing"
 	"time"
-
 	atest "github.com/aristanetworks/goarista/test"
 	"github.com/golang/mock/gomock"
 	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/hrpc"
-	"github.com/tsuna/gohbase/pb"
-	"github.com/tsuna/gohbase/test"
-	"github.com/tsuna/gohbase/test/mock"
 )
 
 func TestErrors(t *testing.T) {

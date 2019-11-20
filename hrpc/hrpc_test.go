@@ -9,17 +9,16 @@ import (
 	"bytes"
 	"context"
 	"errors"
+	"github.com/aristanetworks/goarista/test"
+	"github.com/golang/protobuf/proto"
+	"gohbase/filter"
+	"gohbase/pb"
 	"math"
 	"reflect"
 	"sort"
 	"strconv"
 	"testing"
 	"time"
-
-	"github.com/aristanetworks/goarista/test"
-	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/filter"
-	"github.com/tsuna/gohbase/pb"
 )
 
 func TestNewGet(t *testing.T) {

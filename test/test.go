@@ -7,7 +7,6 @@ package test
 
 import (
 	"fmt"
-
 	"github.com/golang/mock/gomock"
 )
 

@@ -7,12 +7,11 @@ package hrpc
 
 import (
 	"errors"
-	"strconv"
-	"testing"
-
 	"github.com/aristanetworks/goarista/test"
 	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/pb"
+	"gohbase/pb"
+	"strconv"
+	"testing"
 )
 
 func TestCellFromCellBlock(t *testing.T) {

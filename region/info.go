@@ -11,11 +11,10 @@ import (
 	"context"
 	"encoding/binary"
 	"fmt"
-	"sync"
-
 	"github.com/golang/protobuf/proto"
-	"github.com/tsuna/gohbase/hrpc"
-	"github.com/tsuna/gohbase/pb"
+	"gohbase/hrpc"
+	"gohbase/pb"
+	"sync"
 )
 
 var defaultNamespace = []byte("default")
@@ -52,6 +51,8 @@ type info struct {
 	// again can read from this channel, which will be closed when the region
 	// is available again
 	available chan struct{}
+
+	err error
 }
 
 // NewInfo creates a new region info
@@ -164,6 +165,25 @@ func (i *info) AvailabilityChan() <-chan struct{} {
 	return ch
 }
 
+//MarkErr will mark err signal
+func (i *info) MarkErr(err error) {
+	i.m.RLock()
+	if i.available == nil {
+		i.available = make(chan struct{})
+	}
+	i.available <- struct{}{}
+	i.err = err
+	i.m.RUnlock()
+	return
+}
+
+func (i *info) Err() error{
+	i.m.RLock()
+	err := i.err
+	i.m.RUnlock()
+	return err
+}
+
 // MarkUnavailable will mark this region as unavailable, by creating the struct
 // returned by AvailabilityChan. If this region was marked as available
 // before this, true will be returned.
@@ -177,6 +197,8 @@ func (i *info) MarkUnavailable() bool {
 	i.m.Unlock()
 	return created
 }
+
+
 
 // MarkAvailable will mark this region as available again, by closing the struct
 // returned by AvailabilityChan
