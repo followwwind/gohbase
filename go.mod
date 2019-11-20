@@ -10,6 +10,5 @@ require (
 	github.com/prometheus/common v0.6.0
 	github.com/samuel/go-zookeeper v0.0.0-20190923202752-2cc03de413da
 	github.com/sirupsen/logrus v1.4.2
-	github.com/tsuna/gohbase v0.0.0-20190823190353-a66bcc9075db
 	golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
 )
