@@ -3,7 +3,7 @@ package gohbase
 import (
 	"context"
 	"fmt"
-	"gohbase/hrpc"
+	"github.com/followwwind/gohbase/hrpc"
 	"testing"
 	"time"
 )
@@ -63,7 +63,7 @@ func TestContext(t *testing.T) {
 	}
 }
 
-func print(ctx context.Context, ch chan int){
+func print(ctx context.Context, ch chan int) {
 	for {
 		//fmt.Println(time.Now())
 		fmt.Println(ctx.Value("hello"))

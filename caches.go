@@ -8,8 +8,8 @@ package gohbase
 import (
 	"bytes"
 	"github.com/cznic/b"
+	"github.com/followwwind/gohbase/hrpc"
 	log "github.com/sirupsen/logrus"
-	"gohbase/hrpc"
 	"io"
 	"sync"
 )

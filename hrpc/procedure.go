@@ -1,5 +1,5 @@
-// Copyright (C) 2016  The GoHBase Authors.  All rights reserved.
-// This file is part of GoHBase.
+// Copyright (C) 2016  The github.com/followwwind/gohbase Authors.  All rights reserved.
+// This file is part of github.com/followwwind/gohbase.
 // Use of this source code is governed by the Apache License 2.0
 // that can be found in the COPYING file.
 
@@ -7,8 +7,8 @@ package hrpc
 
 import (
 	"context"
+	"github.com/followwwind/gohbase/pb"
 	"github.com/golang/protobuf/proto"
-	"gohbase/pb"
 )
 
 // GetProcedureState represents a call to HBase to check status of a procedure

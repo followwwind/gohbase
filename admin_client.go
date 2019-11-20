@@ -9,11 +9,11 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/followwwind/gohbase/hrpc"
+	"github.com/followwwind/gohbase/pb"
+	"github.com/followwwind/gohbase/region"
+	"github.com/followwwind/gohbase/zk"
 	log "github.com/sirupsen/logrus"
-	"gohbase/hrpc"
-	"gohbase/pb"
-	"gohbase/region"
-	"gohbase/zk"
 	"time"
 )
 

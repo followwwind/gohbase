@@ -9,14 +9,14 @@ import (
 	"bytes"
 	"context"
 	"errors"
-	"gohbase/hrpc"
-	"gohbase/pb"
-	"gohbase/test"
+	atest "github.com/aristanetworks/goarista/test"
+	"github.com/followwwind/gohbase/hrpc"
+	"github.com/followwwind/gohbase/pb"
+	"github.com/followwwind/gohbase/test"
+	"github.com/golang/protobuf/proto"
 	"sort"
 	"strconv"
 	"testing"
-	atest "github.com/aristanetworks/goarista/test"
-	"github.com/golang/protobuf/proto"
 )
 
 type RegionActions []*pb.RegionAction

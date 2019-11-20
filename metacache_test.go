@@ -8,14 +8,14 @@ package gohbase
 import (
 	"bytes"
 	"fmt"
+	"github.com/aristanetworks/goarista/test"
+	"github.com/followwwind/gohbase/hrpc"
+	"github.com/followwwind/gohbase/region"
+	mockRegion "github.com/followwwind/gohbase/test/mock/region"
+	"github.com/golang/mock/gomock"
 	"reflect"
 	"sort"
 	"testing"
-	"github.com/aristanetworks/goarista/test"
-	"github.com/golang/mock/gomock"
-	"gohbase/hrpc"
-	"gohbase/region"
-	mockRegion "gohbase/test/mock/region"
 )
 
 func TestMetaCache(t *testing.T) {

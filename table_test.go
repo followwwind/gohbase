@@ -10,8 +10,8 @@ package gohbase_test
 import (
 	"context"
 	"fmt"
-	"gohbase/filter"
-	"gohbase/hrpc"
+	"github.com/followwwind/gohbase/filter"
+	"github.com/followwwind/gohbase/hrpc"
 	"io"
 	"strings"
 	"testing"

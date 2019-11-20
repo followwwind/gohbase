@@ -10,9 +10,9 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/followwwind/gohbase/hrpc"
+	"github.com/followwwind/gohbase/pb"
 	"github.com/golang/protobuf/proto"
-	"gohbase/hrpc"
-	"gohbase/pb"
 	"io"
 	"math"
 )

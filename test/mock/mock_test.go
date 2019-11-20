@@ -6,12 +6,12 @@
 package mock_test
 
 import (
+	"github.com/followwwind/gohbase/hrpc"
+	"github.com/followwwind/gohbase/test/mock"
+	regionMock "github.com/followwwind/gohbase/test/mock/region"
+	zkMock "github.com/followwwind/gohbase/test/mock/zk"
+	"github.com/followwwind/gohbase/zk"
 	"gohbase"
-	"gohbase/hrpc"
-	"gohbase/test/mock"
-	regionMock "gohbase/test/mock/region"
-	zkMock "gohbase/test/mock/zk"
-	"gohbase/zk"
 	"net"
 )
 

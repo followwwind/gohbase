@@ -9,10 +9,10 @@ package zk
 import (
 	"encoding/binary"
 	"fmt"
+	"github.com/followwwind/gohbase/pb"
 	"github.com/golang/protobuf/proto"
 	"github.com/samuel/go-zookeeper/zk"
 	log "github.com/sirupsen/logrus"
-	"gohbase/pb"
 	"net"
 	"path"
 	"strings"

@@ -11,12 +11,12 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/followwwind/gohbase/hrpc"
+	"github.com/followwwind/gohbase/pb"
+	"github.com/golang/protobuf/proto"
 	"sync"
 	"sync/atomic"
 	"time"
-	"gohbase/hrpc"
-	"gohbase/pb"
-	"github.com/golang/protobuf/proto"
 )
 
 type testClient struct {

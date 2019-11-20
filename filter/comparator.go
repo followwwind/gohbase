@@ -7,8 +7,7 @@ package filter
 
 import (
 	"errors"
-	"gohbase/pb"
-
+	"github.com/followwwind/gohbase/pb"
 	"github.com/golang/protobuf/proto"
 )
 

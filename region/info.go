@@ -11,9 +11,9 @@ import (
 	"context"
 	"encoding/binary"
 	"fmt"
+	"github.com/followwwind/gohbase/hrpc"
+	"github.com/followwwind/gohbase/pb"
 	"github.com/golang/protobuf/proto"
-	"gohbase/hrpc"
-	"gohbase/pb"
 	"sync"
 )
 
@@ -177,7 +177,7 @@ func (i *info) MarkErr(err error) {
 	return
 }
 
-func (i *info) Err() error{
+func (i *info) Err() error {
 	i.m.RLock()
 	err := i.err
 	i.m.RUnlock()
@@ -197,8 +197,6 @@ func (i *info) MarkUnavailable() bool {
 	i.m.Unlock()
 	return created
 }
-
-
 
 // MarkAvailable will mark this region as available again, by closing the struct
 // returned by AvailabilityChan

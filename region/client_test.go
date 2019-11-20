@@ -1,5 +1,5 @@
-// Copyright (C) 2015  The GoHBase Authors.  All rights reserved.
-// This file is part of GoHBase.
+// Copyright (C) 2015  The github.com/followwwind/gohbase Authors.  All rights reserved.
+// This file is part of github.com/followwwind/gohbase.
 // Use of this source code is governed by the Apache License 2.0
 // that can be found in the COPYING file.
 
@@ -11,19 +11,19 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"gohbase/hrpc"
-	"gohbase/pb"
-	"gohbase/test"
-	"gohbase/test/mock"
+	atest "github.com/aristanetworks/goarista/test"
+	"github.com/followwwind/gohbase/hrpc"
+	"github.com/followwwind/gohbase/pb"
+	"github.com/followwwind/gohbase/test"
+	"github.com/followwwind/gohbase/test/mock"
+	"github.com/golang/mock/gomock"
+	"github.com/golang/protobuf/proto"
 	"net"
 	"strconv"
 	"sync"
 	"sync/atomic"
 	"testing"
 	"time"
-	atest "github.com/aristanetworks/goarista/test"
-	"github.com/golang/mock/gomock"
-	"github.com/golang/protobuf/proto"
 )
 
 func TestErrors(t *testing.T) {

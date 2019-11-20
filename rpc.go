@@ -10,11 +10,11 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/followwwind/gohbase/hrpc"
+	"github.com/followwwind/gohbase/region"
+	"github.com/followwwind/gohbase/zk"
 	"github.com/golang/protobuf/proto"
 	log "github.com/sirupsen/logrus"
-	"gohbase/hrpc"
-	"gohbase/region"
-	"gohbase/zk"
 	"io"
 	"strconv"
 	"time"
@@ -257,7 +257,6 @@ func (c *client) lookupRegion(ctx context.Context,
 			"backoff": backoff,
 			"err":     err,
 		}).Error("failed looking up region")
-
 
 		return nil, "", err
 		//This will be hit if there was an error locating the region

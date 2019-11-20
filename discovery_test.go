@@ -7,8 +7,8 @@ package gohbase
 
 import (
 	"bytes"
-	"gohbase/hrpc"
-	"gohbase/region"
+	"github.com/followwwind/gohbase/hrpc"
+	"github.com/followwwind/gohbase/region"
 	"testing"
 )
 

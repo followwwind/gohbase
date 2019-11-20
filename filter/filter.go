@@ -1,5 +1,5 @@
-// Copyright (C) 2015  The GoHBase Authors.  All rights reserved.
-// This file is part of GoHBase.
+// Copyright (C) 2015  The github.com/followwwind/github.com/followwwind/gohbase Authors.  All rights reserved.
+// This file is part of github.com/followwwind/gohbase.
 // Use of this source code is governed by the Apache License 2.0
 // that can be found in the COPYING file.
 
@@ -7,8 +7,8 @@ package filter
 
 import (
 	"errors"
+	"github.com/followwwind/gohbase/pb"
 	"github.com/golang/protobuf/proto"
-	"gohbase/pb"
 )
 
 const filterPath = "org.apache.hadoop.hbase.filter."

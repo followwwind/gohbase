@@ -10,7 +10,7 @@ package region
 import (
 	"context"
 	"fmt"
-	"gohbase/hrpc"
+	"github.com/followwwind/gohbase/hrpc"
 	"net"
 	"time"
 )
